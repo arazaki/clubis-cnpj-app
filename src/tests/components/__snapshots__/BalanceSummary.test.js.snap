@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should correctly render BalanceSummary with 1 expense 1`] = `
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      Saldo disponível: 
+      <span>
+        $0.00
+      </span>
+    </h1>
+  </div>
+  <div
+    className="nav-link"
+  >
+    <div
+      className="content-container"
+    >
+      <NavLink
+        activeClassName="is-active"
+        ariaCurrent="true"
+        className="nav-link__link"
+        to="/dashboard"
+      >
+        Extrato
+      </NavLink>
+      <NavLink
+        activeClassName="is-active"
+        ariaCurrent="true"
+        className="nav-link__link"
+        to="/futureCashback"
+      >
+        Futuro
+      </NavLink>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should correctly render BalanceSummary with multiple expenses 1`] = `
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="page-header__title"
+    >
+      Saldo disponível: 
+      <span>
+        $0.00
+      </span>
+    </h1>
+  </div>
+  <div
+    className="nav-link"
+  >
+    <div
+      className="content-container"
+    >
+      <NavLink
+        activeClassName="is-active"
+        ariaCurrent="true"
+        className="nav-link__link"
+        to="/dashboard"
+      >
+        Extrato
+      </NavLink>
+      <NavLink
+        activeClassName="is-active"
+        ariaCurrent="true"
+        className="nav-link__link"
+        to="/futureCashback"
+      >
+        Futuro
+      </NavLink>
+    </div>
+  </div>
+</div>
+`;

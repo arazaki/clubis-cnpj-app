@@ -10,17 +10,17 @@ exports[`should render ExpenseList with empty message 1`] = `
     <div
       className="show-for-mobile"
     >
-      Expenses
+      Compras
     </div>
     <div
       className="show-for-desktop"
     >
-      Expense
+      Compra
     </div>
     <div
       className="show-for-desktop"
     >
-      Amount
+      Cashback
     </div>
   </div>
   <div
@@ -30,7 +30,7 @@ exports[`should render ExpenseList with empty message 1`] = `
       className="list-item list-item--message"
     >
       <span>
-        No expenses
+        Sem compras ainda :/
       </span>
     </div>
   </div>
@@ -47,17 +47,17 @@ exports[`should render ExpenseList with expenses 1`] = `
     <div
       className="show-for-mobile"
     >
-      Expenses
+      Compras
     </div>
     <div
       className="show-for-desktop"
     >
-      Expense
+      Compra
     </div>
     <div
       className="show-for-desktop"
     >
-      Amount
+      Cashback
     </div>
   </div>
   <div

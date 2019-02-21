@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ExpenseListItem from './ExpenseListItem';
+import CashbackListItem from './CashbackListItem';
 import selectExpenses from '../selectors/expenses';
 
-export const ExpenseList = (props) => (
+export const CashbackList = (props) => (
     <div className="content-container">
         <div className="list-header">
-            <div className="show-for-mobile">Compras</div>
-            <div className="show-for-desktop">Compra</div>
+            <div className="show-for-mobile">Data</div>
+            <div className="show-for-desktop">Cashbacks</div>
             <div className="show-for-desktop">Cashback</div>
         </div>
         <div className="list-body">
@@ -20,7 +20,7 @@ export const ExpenseList = (props) => (
                     </div>
                 ) : (
                         props.expenses.map((expense) => {
-                            return <ExpenseListItem key={expense.id} {...expense} />;
+                            return <CashbackListItem key={expense.id} {...expense} />;
                         })
                     )
             }
@@ -34,4 +34,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(ExpenseList);
+export default connect(mapStateToProps)(CashbackList);

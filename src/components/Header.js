@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { startLogout } from '../actions/auth';
+import BalanceSummary from './BalanceSummary';
 
 export const Header = ({ startLogout }) => (
     <header className="header">
@@ -13,6 +14,7 @@ export const Header = ({ startLogout }) => (
                 <button className="button button--link" onClick={startLogout}>Sair</button>
             </div>
         </div>
+        <BalanceSummary />
     </header>
 );
 
