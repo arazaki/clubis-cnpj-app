@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import StatementList from './StatementList';
+import ExpenseList from './ExpenseList';
 import BalanceSummary from './BalanceSummary';
 
-export const DashboardPage = ({ company }) => (
+export const PurchasedPage = ({ company }) => (
     <div>
         <BalanceSummary {...company} />
-        <StatementList {...company} />
+        <ExpenseList {...company} />
     </div>
 );
 
@@ -15,6 +15,6 @@ const mapStateToProps = (state, props) => ({
 
 });
 
-export default connect(mapStateToProps)(DashboardPage);
+export default connect(mapStateToProps)(PurchasedPage);
 
 

@@ -14,6 +14,8 @@ export class EditUserPage extends React.Component {
         this.props.history.push('/createUser');
     }
 
+    // <button className="button button--secondary" >Excluir Conta</button>
+
     render() {
         return (
             <div>
@@ -23,7 +25,7 @@ export class EditUserPage extends React.Component {
                         user={this.props.user}
                         onSubmit={this.onSubmit}
                     />
-                    <button className="button button--secondary" onClick={this.onRemove}>Excluir Conta</button>
+                    
                 </div>
             </div>
         )

@@ -2,13 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { startLogout } from '../actions/auth';
-import BalanceSummary from './BalanceSummary';
 
 export const Header = ({ startLogout, uid }) => (
     <header className="header">
         <div className="content-container">
             <div className="header__content">
-                <Link className="header__title" to="/dashboard">
+                <Link className="header__title" to="/companyList">
                     <h1>Clube de Incentivo</h1>
                 </Link>
                 <div>
@@ -17,7 +16,6 @@ export const Header = ({ startLogout, uid }) => (
                 </div>
             </div>
         </div>
-        <BalanceSummary />
     </header>
 );
 

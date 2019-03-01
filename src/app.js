@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { startSetExpenses } from './actions/expenses';
+import { startSetCompanies } from './actions/companies';
 import { startSetUser } from './actions/user';
 import { login, logout } from './actions/auth';
 import 'normalize.css/normalize.css';
@@ -41,10 +42,10 @@ firebase.auth().onAuthStateChanged((user) => {
         store.dispatch(startSetUser()).then(() => {
             // to validate if there is a user with cpf
             if (store.getState().user) {
-                store.dispatch(startSetExpenses()).then(() => {
+                store.dispatch(startSetCompanies()).then(() => {
                     renderApp();
                     if (history.location.pathname === '/') {
-                        history.push('/dashboard');
+                        history.push('/companyList');
                     }
                 })
             } else {
