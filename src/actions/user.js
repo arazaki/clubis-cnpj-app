@@ -45,9 +45,8 @@ export const startRemoveUser = (user) => {
 };
 
 // EDIT_USER
-export const editUser = (user, updates) => ({
+export const editUser = (updates) => ({
     type: 'EDIT_USER',
-    user,
     updates
 });
 
