@@ -1,37 +1,47 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import moment from 'moment';
 import numeral from 'numeral';
+import { MdTimer, MdCheckCircle } from 'react-icons/md'
 
 const ExpenseListItem = ({ onBalance, total, cashback, cashbackDate, purchaseDate, items, cfeId }) => (
-    <div className={`list-item ${onBalance ? "onBalance" : "offBalance" }`}>
+    <div className="list-item">
+        <div className="sub-list-item">
+            <div className="list-item__icon">
+                {onBalance ? (
+                    <MdCheckCircle />
+                ) : (
+                        <MdTimer />
+                    )}
+            </div>
+            <div>
+                <span className="list-item__sub-title">
+                {onBalance ? (
+                    "Recebido em: "
+                ) : (
+                        "A receber em: "
+                    )} {moment(cashbackDate).format('DD/MM/YY')}
+                </span>
+                <p>
+                    Valor: {numeral(cashback).format('$0,0.00')}
+                </p>
+            </div>
+        </div>
         <div>
             <span className="list-item__sub-title">
-                Data da compra: {moment(purchaseDate).format('DD [de] MMMM [de] YYYY')}
+                Data da compra: {moment(purchaseDate).format('DD/MM/YY')}
             </span>
-            <div>
+            <div className="list-product">
                 {
                     items.map((item, index) => {
                         return (
-                            <div className="list-item__product" key={cfeId + index}>{item.quantity} - {item.description} </div>
+                            <div className="list-product__item" key={cfeId + index}>{item.quantity} - {item.description} </div>
                         )
                     })
                 }
             </div>
-            <h3 className="list-item__data">
+            <p className="list-item__data">
                 Total: {numeral(total).format('$0,0.00')}
-            </h3>
-        </div>
-        <div>
-            <h3 className="list-item__data">
-                Status: {onBalance ? "Recebido" : "A receber"}
-            </h3>
-            <p>
-                Valor: {numeral(cashback).format('$0,0.00')}
             </p>
-            <span className="list-item__sub-title">
-                Data do crédito: {moment(cashbackDate).add(7, 'days').format('DD [de] MMMM [de] YYYY')}
-            </span>
         </div>
     </div>
 );

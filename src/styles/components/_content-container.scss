@@ -3,3 +3,19 @@
     max-width: 80rem;
     padding: 0 $m-size;
 }
+
+.bg-orange{
+    background: $light-orange;
+    @media (min-width: $desktop-breakpoint) {
+        padding-bottom: $l-size;
+    }
+}
+
+.content-container--bg-white{
+    background: white;
+    padding: $l-size;
+}
+
+.content-container--form{
+    padding: $l-size $m-size;
+}

@@ -5,9 +5,9 @@ import CompanyListItem from './CompanyListItem';
 export const CompanyList = (props) => (
     <div className="content-container">
         <div className="list-header">
-            <div className="NOCLASS">Clubes</div>
+            <div className="NOCLASS"> Meus Clubes</div>
         </div>
-        <div className="list-body">
+        <div className="list-body list-body--grid">
             {
                 props.companies.length === 0 ? (
                     <div className="list-item list-item--message">

@@ -4,7 +4,7 @@ import ExpenseList from './ExpenseList';
 import BalanceSummary from './BalanceSummary';
 
 export const PurchasedPage = ({ company }) => (
-    <div>
+    <div className="bg-orange">
         <BalanceSummary {...company} />
         <ExpenseList {...company} />
     </div>

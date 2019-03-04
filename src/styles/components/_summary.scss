@@ -1,4 +1,47 @@
 .summary-content{
+    display: block;
+    justify-content: space-between;
+}
+
+.summary-header{
     display: flex;
     justify-content: space-between;
+    padding-bottom: $m-size;
+}
+
+.summary-header__title{
+    font-weight: 300;
+    margin: 0;
+    span {
+        font-weight: 700;
+        margin: 0;
+    }
+    p {
+        font-weight: 700;
+        margin: 0;
+    }
+}
+
+.summary-header__logo {
+    img, svg {
+        height: 10rem;
+        width: 10rem;
+        color: $grey;
+    }
+}
+
+.summary-header__title--logo{
+    display: flex;
+    justify-content: space-between;
+    h1 {
+        margin-left: $m-size;
+    }
+}
+
+.summary-monetary{
+    font-size: $m-size;
+}
+
+.summary-value{
+    font-size: $xl-size;
 }

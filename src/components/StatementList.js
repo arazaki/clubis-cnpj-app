@@ -1,13 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import StatementListItem from './StatementListItem';
-import selectExpenses from '../selectors/expenses';
 
 export const StatementList = (props) => (
-    <div className="content-container">
-        <div className="list-header">
-            <div className="NOCLASS">Extrato</div>
-        </div>
+    <div className="content-container content-container--bg-white">
         <div className="list-body">
             {
                 props.statement.length === 0 ? (

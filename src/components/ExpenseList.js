@@ -3,12 +3,7 @@ import { connect } from 'react-redux';
 import ExpenseListItem from './ExpenseListItem';
 
 export const ExpenseList = (props) => (
-    <div className="content-container">
-        <div className="list-header">
-            <div className="show-for-mobile">Compras</div>
-            <div className="show-for-desktop">Compra</div>
-            <div className="show-for-desktop">Data</div>
-        </div>
+    <div className="content-container content-container--bg-white">
         <div className="list-body">
             {
                 props.expenses.length === 0 ? (

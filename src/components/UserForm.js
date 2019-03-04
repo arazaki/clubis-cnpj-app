@@ -15,7 +15,7 @@ export default class UserForm extends React.Component {
             cpf: props.user ? props.user.cpf : '',
             email: props.user ? props.user.email : '',
             phoneNumber: props.user ? props.user.phoneNumber : '',
-            birthday: props.user ? moment(props.user.birthday).format("DD/MM/YYYY") : moment().format("DD/MM/YYYY"),
+            birthday: props.user ? moment(props.user.birthday).format("DD/MM/YYYY") : '',
             calendarFocused: false,
             error: ''
         };
