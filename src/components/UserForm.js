@@ -1,6 +1,5 @@
 import React from 'react';
 import moment from 'moment';
-import { SingleDatePicker } from 'react-dates';
 import CPF from 'gerador-validador-cpf';
 import MaskedInput from 'react-text-mask';
 
@@ -95,7 +94,7 @@ export default class UserForm extends React.Component {
                 />
                 <input
                     className="text-input"
-                    type="text"
+                    type="email"
                     placeholder="Email"
                     value={this.state.email}
                     onChange={this.onEmailChange}
@@ -103,7 +102,7 @@ export default class UserForm extends React.Component {
                 <MaskedInput
                     mask={['(', /[1-9]/, /\d/, ')', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
                     className="text-input"
-                    type="text"
+                    type="tel"
                     placeholder="Celular"
                     value={this.state.phoneNumber}
                     onChange={this.onPhoneNumberChange}

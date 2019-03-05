@@ -18,7 +18,7 @@ const StatementListItem = ({ date, value, type }) => (
                     {type === "CASHBACK" ? "Cashback" : "Resgate"}
                 </h3>
                 <p className="list-item__data">
-                    {type === "CASHBACK" ? "Recebido de volta" : "Resgatado"}: {numeral(value * 0.1).format('$0,0.00')}
+                    {type === "CASHBACK" ? "Recebido" : "Resgatado"}: {numeral(value * 0.1).format('$0,0.00')}
                 </p>
             </div>
         </div>

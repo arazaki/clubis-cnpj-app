@@ -8,7 +8,7 @@ export const Header = ({ startLogout, uid }) => (
         <div className="content-container">
             <div className="header__content">
                 <Link className="header__title" to="/companyList">
-                    <h1>Clube de Incentivo</h1>
+                    <h1>CluBis</h1>
                 </Link>
                 <div>
                     <Link className="button button--link" to={`/editUser/${uid}`}>Minha Conta</Link>

@@ -13,9 +13,19 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+const FacebookAuthProvider = new firebase.auth.FacebookAuthProvider();
 
-export { firebase, googleAuthProvider, database as default };
+export { firebase, googleAuthProvider, FacebookAuthProvider, database as default };
 
+
+// isEqual - not working yet
+
+// const ref = database.ref('info');
+// ref.orderByChild('cpf').equalTo('04774561975').on("child_added", function (snapshot) {
+//     console.log(snapshot.key);
+// }, (e) => {
+//     console.log('Error retrieving data after child_changed', e)
+// });
 
 // // child_removed
 // database.ref('expenses').on('child_removed', (snaphshot) => {
@@ -76,7 +86,7 @@ export { firebase, googleAuthProvider, database as default };
 // });
 
 // database.ref().on('value', (snapshot) => {
-    
+
 //     const val = snapshot.val();
 //     console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`);
 // }, (e) => {

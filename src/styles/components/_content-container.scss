@@ -13,7 +13,10 @@
 
 .content-container--bg-white{
     background: white;
-    padding: $l-size;
+    padding: $xs-size;
+    @media (min-width: $desktop-breakpoint) {
+        padding: $l-size;
+    }
 }
 
 .content-container--form{
