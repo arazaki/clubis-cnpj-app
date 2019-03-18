@@ -3,7 +3,7 @@ import moment from 'moment';
 import numeral from 'numeral';
 import { MdTimer, MdCheckCircle } from 'react-icons/md'
 
-const ExpenseListItem = ({ onBalance, total, cashback, cashbackDate, purchaseDate, items, cfeId }) => (
+const SaleListItem = ({ fullName, cpf, onBalance, total, cashback, cashbackDate, purchaseDate, items, cfeId }) => (
     <div className="list-item">
         <div className="sub-list-item">
             <div className="list-item__icon">
@@ -15,21 +15,17 @@ const ExpenseListItem = ({ onBalance, total, cashback, cashbackDate, purchaseDat
             </div>
             <div>
                 <span className="list-item__sub-title">
-                {onBalance ? (
-                    "Recebido em: "
-                ) : (
-                        "A receber em: "
-                    )} {moment(cashbackDate).format('DD/MM/YY')}
+                    Data da compra: {moment(purchaseDate).format('DD/MM/YY')}
                 </span>
-                <p>
-                    Valor: {numeral(cashback).format('$0,0.00')}
+                <p className="list-item__data">
+                    {fullName}
                 </p>
+                <span className="list-item__sub-title">
+                    {cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4")}
+                </span>
             </div>
         </div>
         <div>
-            <span className="list-item__sub-title">
-                Data da compra: {moment(purchaseDate).format('DD/MM/YY')}
-            </span>
             <div className="list-product">
                 {
                     items.map((item, index) => {
@@ -43,7 +39,19 @@ const ExpenseListItem = ({ onBalance, total, cashback, cashbackDate, purchaseDat
                 Total: {numeral(total).format('$0,0.00')}
             </p>
         </div>
+        <div>
+            <span className="list-item__sub-title">
+                {onBalance ? (
+                    "Recebido em: "
+                ) : (
+                        "A receber em: "
+                    )} {moment(cashbackDate).format('DD/MM/YY')}
+            </span>
+            <p>
+                Valor: {numeral(cashback).format('$0,0.00')}
+            </p>
+        </div>
     </div>
 );
 
-export default ExpenseListItem;
+export default SaleListItem;

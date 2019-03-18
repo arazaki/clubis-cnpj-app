@@ -1,26 +1,26 @@
 import database from '../firebase/firebase';
 
-// SET_COMPANIES
-export const setCompanies = (companies) => ({
-    type: 'SET_COMPANIES',
-    companies
+// SET_EXPENSES
+export const setSales = (sales) => ({
+    type: 'SET_SALES',
+    sales
 });
 
-// export const startSetCompanies;
-export const startSetCompanies = () => {
+// export const startSetSales;
+export const startSetSales = () => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
-        return database.ref(`users/${uid}/companies`)
+        return database.ref(`companies/${uid}/sales`)
         .once('value')
         .then((snapshot) => {
-            const companies = [];
+            const sales = [];
             snapshot.forEach((childSnapshot) => {
-                companies.push({
+                sales.push({
                     id: childSnapshot.key,
                     ...childSnapshot.val()
                 });
             });
-            dispatch(setCompanies(companies));
+            dispatch(setSales(sales));
         });
        
     };

@@ -1,21 +1,25 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import expensesReducer from '../reducers/expenses';
+import salesReducer from '../reducers/sales';
 import filtersReducer from '../reducers/filters';
+import dashboardDataReducer from '../reducers/dashboardData';
 import authReducer from '../reducers/auth';
-import userReducer from '../reducers/user';
-import companiesReducer from '../reducers/companies';
+import companyReducer from '../reducers/company';
+import customersReducer from '../reducers/customers';
+import vouchersReducer from '../reducers/vouchers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export default () => {
     const store = createStore(
         combineReducers({
-            expenses: expensesReducer,
+            sales: salesReducer,
             filters: filtersReducer,
+            dashboardData: dashboardDataReducer,
             auth: authReducer,
-            user: userReducer,
-            companies: companiesReducer
+            company: companyReducer,
+            customers: customersReducer, 
+            vouchers: vouchersReducer
         }),
         composeEnhancers(applyMiddleware(thunk))
         );

@@ -2,18 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 import Header from '../components/Header';
-import AddUserPage from '../components/AddUserPage';
+import AddCompanyPage from '../components/AddCompanyPage';
 
 export const PrivateRoute = ({
     isAuthenticated,
-    userExist,
+    companyExist,
     component: Component,
     ...rest
 }) => (
         <Route {...rest} component={(props) => {
-            if (isAuthenticated && !userExist ) { 
+            if (isAuthenticated && !companyExist ) { 
                 return (
-                    <AddUserPage {...props} />
+                    <AddCompanyPage {...props} />
                 )
             } else if (isAuthenticated) {
                 return (
@@ -32,7 +32,7 @@ export const PrivateRoute = ({
 
 const mapStateToProps = (state) => ({
     isAuthenticated: !!state.auth.uid,
-    userExist: !!state.user
+    companyExist: !!state.company
 });
 
 export default connect(mapStateToProps)(PrivateRoute);

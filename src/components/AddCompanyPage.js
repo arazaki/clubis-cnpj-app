@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import UserForm from './UserForm';
-import { startAddUser } from '../actions/user';
+import CompanyForm from './CompanyForm';
+import { startAddCompany } from '../actions/company';
 import { startLogout } from '../actions/auth';
 
-export class AddUserPage extends React.Component {
-    onSubmit = (user) => {
-        this.props.startAddUser(user);
+export class AddCompanyPage extends React.Component {
+    onSubmit = (company) => {
+        this.props.startAddCompany(company);
         this.props.history.push('/');
     };
 
@@ -20,13 +20,13 @@ export class AddUserPage extends React.Component {
                 <div className="header">
                     <div className="content-container">
                         <div className="header__content">
-                            <h1 className="header__title">Criar usuário</h1>
+                            <h1 className="header__title">Registrar Empresa</h1>
                             <button className="button button--link" onClick={this.onLogout}>Sair</button>
                         </div>
                     </div>
                 </div>
                 <div className="content-container content-container--form">
-                    <UserForm
+                    <CompanyForm
                         onSubmit={this.onSubmit}
                     />
                 </div>
@@ -36,8 +36,8 @@ export class AddUserPage extends React.Component {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    startAddUser: (user) => dispatch(startAddUser(user)),
+    startAddCompany: (company) => dispatch(startAddCompany(company)),
     startLogout: () => dispatch(startLogout())
 });
 
-export default connect(undefined, mapDispatchToProps)(AddUserPage);
+export default connect(undefined, mapDispatchToProps)(AddCompanyPage);

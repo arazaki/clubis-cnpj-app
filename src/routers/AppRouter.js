@@ -1,15 +1,17 @@
 import React from 'react';
-import { Router, Route, Switch, Link, NavLink } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import DashboardPage from '../components/DashboardPage';
-import PurchasedPage from '../components/PurchasedPage';
 import NotFound from '../components/NotFound';
 import LoginPage from '../components/LoginPage';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
-import AddUserPage from '../components/AddUserPage';
-import EditUserPage from '../components/EditUserPage';
-import CompanyList from '../components/CompanyList';
+import AddCompanyPage from '../components/AddCompanyPage';
+import AddVoucherPage from '../components/AddVoucherPage';
+import EditCompanyPage from '../components/EditCompanyPage';
+import SaleDashboardPage from '../components/SaleDashboard';
+import VoucherDashboardPage from '../components/VoucherDashboardPage';
+import CustomerDashboardPage from '../components/CustomerDashboardPage';
 
 export const history = createHistory();
 
@@ -18,11 +20,13 @@ const AppRouter = () => (
     <div>
         <Switch>
             <PublicRoute path="/" component={LoginPage} exact={true}/>
-            <PrivateRoute path="/companyList" component={CompanyList} />
-            <PrivateRoute path="/dashboard/:id" component={DashboardPage} />
-            <PrivateRoute path="/purchased/:id" component={PurchasedPage} />
-            <PrivateRoute path="/createUser" component={AddUserPage} />
-            <PrivateRoute path="/editUser/:id" component={EditUserPage} />
+            <PrivateRoute path="/sales" component={SaleDashboardPage} />
+            <PrivateRoute path="/dashboard" component={DashboardPage} />
+            <PrivateRoute path="/customers" component={CustomerDashboardPage} />
+            <PrivateRoute path="/vouchers" component={VoucherDashboardPage} />
+            <PrivateRoute path="/createCompany" component={AddCompanyPage} />
+            <PrivateRoute path="/editCompany/:id" component={EditCompanyPage} />
+            <PrivateRoute path="/createVoucher" component={AddVoucherPage} />
             <Route component={NotFound} />
         </Switch>
     </div>

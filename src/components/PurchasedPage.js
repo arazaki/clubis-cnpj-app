@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ExpenseList from './ExpenseList';
+import SaleList from './SaleList';
 import BalanceSummary from './BalanceSummary';
 
 export const PurchasedPage = ({ company }) => (
     <div className="bg-orange">
         <BalanceSummary {...company} />
-        <ExpenseList {...company} />
+        <SaleList {...company} />
     </div>
 );
 

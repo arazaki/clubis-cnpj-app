@@ -1,9 +1,9 @@
 .nav-link{
     .is-active {
-        background: white;
+        background: $light-orange;
         color: black;
         &:hover {
-            background: white;
+            background: $light-orange;
             cursor: default;
         }
     }
@@ -20,6 +20,6 @@
     text-decoration: none;
     margin: 0 $s-size 0 0;
     &:hover {
-        background: $orange;
+        background: $grey;
     }
 }

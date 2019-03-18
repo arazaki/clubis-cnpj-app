@@ -1,4 +1,3 @@
-import uuid from 'uuid';
 import database from '../firebase/firebase';
 
 // ADD_VOUCHER
@@ -11,14 +10,13 @@ export const startAddVoucher = (voucherData = {}) => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
         const {
-            description = '', 
-            note = '', 
+            cpf = '', 
             amount = 0, 
             createdAt = 0
         } = voucherData;
-        const voucher = {description, note, amount, createdAt}
+        const voucher = {cpf, amount, createdAt}
         
-        return database.ref(`users/${uid}/vouchers`).push(voucher).then((ref) => {
+        return database.ref(`companies/${uid}/vouchers`).push(voucher).then((ref) => {
             dispatch(addExpense({
                 id: ref.key,
                 ...voucher
@@ -36,8 +34,35 @@ export const removeExpense = ({ id } = {} ) => ({
 export const startRemoveExpense = ({ id } = {}) => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
-        return database.ref(`users/${uid}/vouchers/${id}`).remove().then(() => {
+        return database.ref(`companies/${uid}/vouchers/${id}`).remove().then(() => {
             dispatch(removeExpense({ id }));
         });
     };
 };
+
+// SET_EXPENSES
+export const setVouchers = (vouchers) => ({
+    type: 'SET_VOUCHERS',
+    vouchers
+});
+
+// export const startSetVouchers;
+export const startSetVouchers = () => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`companies/${uid}/vouchers`)
+        .once('value')
+        .then((snapshot) => {
+            const vouchers = [];
+            snapshot.forEach((childSnapshot) => {
+                vouchers.push({
+                    id: childSnapshot.key,
+                    ...childSnapshot.val()
+                });
+            });
+            dispatch(setVouchers(vouchers));
+        });
+       
+    };
+};
+

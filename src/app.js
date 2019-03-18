@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import { startSetExpenses } from './actions/expenses';
-import { startSetCompanies } from './actions/companies';
-import { startSetUser } from './actions/user';
+import { startSetDashboardData } from './actions/dashboardData';
+import { startSetCompany } from './actions/company';
+import { startSetCustomers } from './actions/customers';
 import { login, logout } from './actions/auth';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
@@ -39,19 +39,19 @@ ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         store.dispatch(login(user.uid));
-        store.dispatch(startSetUser()).then(() => {
-            // to validate if there is a user with cpf
-            if (store.getState().user) {
-                store.dispatch(startSetCompanies()).then(() => {
+        store.dispatch(startSetCustomers());
+        store.dispatch(startSetCompany()).then(() => {
+            if (store.getState().company) {
+                store.dispatch(startSetDashboardData()).then(() => {
                     renderApp();
                     if (history.location.pathname === '/') {
-                        history.push('/companyList');
+                        history.push('/dashboard');
                     }
                 })
             } else {
                 renderApp();
                 if (history.location.pathname === '/') {
-                    history.push('/createUser');
+                    history.push('/createCompany');
                 };;
             }
         });

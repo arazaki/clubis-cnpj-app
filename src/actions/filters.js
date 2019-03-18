@@ -14,6 +14,16 @@ export const sortByTotal = () => ({
     type: 'SORT_BY_TOTAL'
 });
 
+// SORT_BY_CUSTOMERS_START_DATE
+export const sortByCustomerStartDate = () => ({
+    type: 'SORT_BY_CUSTOMERS_START_DATE'
+});
+
+// SORT_BY_CUSTOMERS_SUM_TOTAL_SALES
+export const sortByCustomersSumTotalSales = () => ({
+    type: 'SORT_BY_CUSTOMERS_SUM_TOTAL_SALES'
+});
+
 // SET_START_DATE
 export const setStartDate = ( startDate ) => ({
     type: 'SET_START_DATE',
@@ -24,4 +34,16 @@ export const setStartDate = ( startDate ) => ({
 export const setEndDate = ( endDate ) => ({
     type: 'SET_END_DATE',
     endDate
+});
+
+// SET_CUSTOMER_START_DATE
+export const setCustomerStartDate = ( customerStartDate ) => ({
+    type: 'SET_CUSTOMER_START_DATE',
+    customerStartDate
+});
+
+// SET_CUSTOMER_END_DATE
+export const setCustomerEndDate = ( customerEndDate ) => ({
+    type: 'SET_CUSTOMER_END_DATE',
+    customerEndDate
 });

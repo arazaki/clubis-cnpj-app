@@ -7,7 +7,7 @@
 .bg-orange{
     background: $light-orange;
     @media (min-width: $desktop-breakpoint) {
-        padding-bottom: $l-size;
+        padding: $m-size;
     }
 }
 
@@ -15,7 +15,7 @@
     background: white;
     padding: $xs-size;
     @media (min-width: $desktop-breakpoint) {
-        padding: $l-size;
+        padding: $s-size;
     }
 }
 

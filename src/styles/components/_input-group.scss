@@ -17,3 +17,12 @@
         margin: 0 $s-size 0;
     }
 }
+
+.input-group__filter {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    @media (min-width: $desktop-breakpoint){
+        flex-direction: row;
+    }
+}
